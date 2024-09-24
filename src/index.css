@@ -1,13 +1,109 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff; /* Define your background color */
+    --foreground: #111111; /* Define your foreground color */
+    --card: #ffffff;
+    --card-foreground: #111111;
+    --border: #e5e5e5; /* Define your border color */
+    --input: #e5e5e5;
+    --ring: #111111;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: #111111;
+    --foreground: #ffffff;
+    --card: #111111;
+    --card-foreground: #ffffff;
+    --border: #333333;
+    --input: #333333;
+    --ring: #ffffff;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  * {
+    border-color: var(--border);
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.product-description {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-title {
+  color: #FFCB02;
+  text-align: center;
+  font-family: "Rammetto One", sans-serif;
+  font-size: 2.5rem; /* 40px converted to rem */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.45em; /* 7.2px converted to em */
+}
+
+.product-title .crisp {
+  color: #000;
+  font-family: "Rammetto One", sans-serif;
+  font-size: 3rem; /* 48px converted to rem */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.54em; /* 8.64px converted to em */
+}
+
+.product-text {
+  max-width: 90%; /* Use max-width instead of fixed width */
+  color: #000;
+  text-align: center;
+  font-family: "Rammetto One", sans-serif;
+  font-size: 1.375rem; /* 22px converted to rem */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.25em; /* 4.18px converted to em */
+}
+
+/* Media Queries for Further Responsiveness */
+@media (max-width: 768px) {
+  .product-title {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .product-title .crisp {
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .product-text {
+    font-size: 1.125rem; /* Adjust font size for smaller screens */
+  }
+}
+
+/* index.css or a global CSS file */
+::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+body {
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+.text-shadow-lg {
+  text-shadow: 2px 2px 5px rgb(255, 255, 255);
+}
+.inner-shadow {
+  box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.5);
 }
