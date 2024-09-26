@@ -51,14 +51,14 @@ const products = [
 
 const App = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-            <section className="bg-gray-100 ">
+    <div className="min-h-screen bg-gray-100 flex flex-col pb-16 mt-14 ">
+            <section className="bg-gray-100  ">
             <SectionHeader title="OUR PRODUCTS" />
 
     <ImageDisplay/>
 
    </section>
-   <section className="bg-gray-100 py-3">
+   <section className="bg-gray-100 py-3 pt-16">
    <div className="max-w-6xl mx-auto mb-5">
    <div className="flex justify-center items-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mx-auto max-w-6xl px-4">

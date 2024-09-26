@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import papadBgImage1 from '../assets/images/main.png';  
-import papadBgImage2 from '../assets/images/papad-bg-image-1.png';
-import papadBgImage3 from '../assets/images/papad-image-5-1.png';
-import papadBgImage4 from '../assets/images/papad-image-14-1.png';
+import papadBgImage2 from '../assets/images/image1.png';
+import papadBgImage3 from '../assets/images/image2.png';
+import papadBgImage4 from '../assets/images/image3.png';
 import frameImage from '../assets/images/Frame1.png'; // Import the mobile image
 
 const slides = [
@@ -36,7 +36,7 @@ const slides = [
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(1);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Set mobile condition
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
     const handleResize = () => {
@@ -64,22 +64,17 @@ const Slider = () => {
   }, []);
 
   const slideVariants = {
-    enter: { y: 50, opacity: 0 },
+    enter: { opacity: 0 },
     center: {
       zIndex: 1,
-      y: 0,
       opacity: 1,
+      transition: { duration: 0 }, // Instant transition
     },
-    exit: { y: -50, opacity: 0 },
-  };
-
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset, velocity) => {
-    return Math.abs(offset) * velocity;
+    exit: { opacity: 0 },
   };
 
   return (
-    <div className="relative w-full h-[487px] overflow-hidden rounded-lg">
+    <div className="relative w-full h-[487px] overflow-x-auto rounded-lg scroll-smooth">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentSlide}
@@ -88,30 +83,12 @@ const Slider = () => {
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{
-            x: { type: "spring", stiffness: 100, damping: 50 },
-            opacity: { duration: 0.2 },
-          }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
-
-            if (swipe < -swipeConfidenceThreshold) {
-              setCurrentSlide((prev) => (prev + 1) % slides.length);
-              setDirection(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-              setDirection(-1);
-            }
-          }}
-          className="absolute inset-0"
+          className="absolute inset-0 flex items-center justify-center"
         >
           <img
-            src={isMobile && currentSlide === 0 ? frameImage : slides[currentSlide].image} // Use frameImage for mobile
+            src={isMobile && currentSlide === 0 ? frameImage : slides[currentSlide].image}
             alt={slides[currentSlide].title}
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full h-full object-fill rounded-lg"
           />
           <div className="absolute inset-0 flex flex-col justify-center items-center rounded-lg">
             <h2 className="text-black text-center font-poppins text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-extrabold leading-normal tracking-[2px] md:tracking-[3.6px] mb-4 

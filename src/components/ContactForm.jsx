@@ -34,7 +34,7 @@ const ContactForm = () => {
     setLoading(true); // Set loading state to true
 
     // Sending email using EmailJS
-    emailjs.send('service_sagar', 'template_t87spmg', formData, 'XX5YvmW_D5ARJ_KjJ')
+    emailjs.send('drashti_foods', 'template_78as31d', formData, 'OTiHIGlSMQqreou0s')
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         toast.success("Form submitted successfully and email sent!");

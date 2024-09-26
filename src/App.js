@@ -1,14 +1,20 @@
-import React from 'react';
+// src/App.js
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion'; // Import Framer Motion
+import { AnimatePresence, motion } from 'framer-motion';
 import Header from './components/Header';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import WhatsAppEnquiry from './components/WhatsAppEnquiry';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Product from './pages/Product';
 import ProductDetails from './pages/ProductDetails';
-import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
+import DistributorInquiry from './pages/DistributorInquiry'; // New component
+import SupplierForm from './pages/SupplierForm'; // New component
+import ExportInquiry from './pages/ExportInquiry'; // New component
+import ScrollUpButton from './components/ScrollUpButton';
 
 const pageVariants = {
   initial: { opacity: 0, y: 50 },
@@ -16,103 +22,58 @@ const pageVariants = {
   exit: { opacity: 0, y: -50 },
 };
 
-const pageTransition = {
-  duration: 0.5,
-  ease: 'easeInOut',
-};
+const pageTransition = { duration: 0.5, ease: 'easeInOut' };
 
 const AnimatedRoutes = () => {
-  const location = useLocation(); // Get current route location
+  const location = useLocation();
 
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route
-          path="/"
-          element={
-            <motion.div
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={pageVariants}
-              transition={pageTransition}
-            >
-              <Home />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <motion.div
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={pageVariants}
-              transition={pageTransition}
-            >
-              <About />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <motion.div
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={pageVariants}
-              transition={pageTransition}
-            >
-              <Contact />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/product"
-          element={
-            <motion.div
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={pageVariants}
-              transition={pageTransition}
-            >
-              <Product />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/product/:id"
-          element={
-            <motion.div
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={pageVariants}
-              transition={pageTransition}
-            >
-              <ProductDetails />
-            </motion.div>
-          }
-        />
+        {['/', '/about', '/contact', '/product', '/product/:id', '/distributor-inquiry', '/supplier-form', '/export-inquiry'].map((path) => (
+          <Route
+            key={path}
+            path={path}
+            element={
+              <motion.div initial="initial" animate="animate" exit="exit" variants={pageVariants} transition={pageTransition}>
+                {path === '/' && <Home />}
+                {path === '/about' && <About />}
+                {path === '/contact' && <Contact />}
+                {path === '/product' && <Product />}
+                {path === '/product/:id' && <ProductDetails />}
+                {path === '/distributor-inquiry' && <DistributorInquiry />}
+                {path === '/export-inquiry' && <ExportInquiry />}
+                {path === '/supplier-form' && <SupplierForm />}
+               {/* Add this line */}
+              </motion.div>
+            }
+          />
+        ))}
       </Routes>
     </AnimatePresence>
   );
 };
 
 function App() {
+  const [isWhatsAppHidden, setIsWhatsAppHidden] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsWhatsAppHidden(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
-      <div>
-        <Header />
-        <div className="pt-20">
-          <AnimatedRoutes />
-        </div>
-        <Footer />
+    
+      <Header  />
+      <div className="pt-20">
+        <AnimatedRoutes />
       </div>
+      <ScrollUpButton
+      ></ScrollUpButton>
+      <Footer />
     </Router>
   );
 }

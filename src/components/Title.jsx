@@ -2,7 +2,7 @@ import React from 'react';
 
 const Title = ({ title }) => {
   return (
-    <div className="text-center mb-10 px-5">
+    <div className="text-center mb-10 mt-5 px-5 ">
       {/* Title with lines on both sides */}
       <div className="flex items-center justify-center">
         <div className="flex-grow h-px bg-gray-300"></div>

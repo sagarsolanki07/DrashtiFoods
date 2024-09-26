@@ -7,37 +7,58 @@ const ProductDescription = () => {
     <section className="pt-10 bg-gray-100">
       <div className="product-description mx-auto mb-6 max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Flex container for the heading */}
-        <div className="flex flex-wrap justify-center text-center lg:justify-center lg:whitespace-nowrap">
-          {/* "Papads" text animating from further left */}
-          <motion.h1
-            className="product-title text-3xl sm:text-4xl lg:text-5xl font-bold"
-            initial={{ x: -300, opacity: 0 }} 
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.2, ease: 'easeOut' }}  
-          >
-            <span className="yellow-text">Papads: A </span>
-          </motion.h1>
+        <div className="flex justify-center text-center lg:justify-center whitespace-nowrap">
+  {/* First part: "Papads: A" */}
+  <motion.h1
+    className="text-3xl sm:text-4xl lg:text-5xl font-bold"
+    initial={{ x: -300, opacity: 0 }} 
+    animate={{ x: 0, opacity: 1 }}
+    transition={{ duration: 1.2, ease: 'easeOut' }}  
+  >
+    <span style={{ 
+      color: '#FFCB02', 
+      fontFamily: 'Rammetto One', 
+      fontSize: '40px', 
+      fontStyle: 'normal', 
+      fontWeight: '400', 
+      lineHeight: 'normal', 
+      letterSpacing: '7.2px' 
+    }}>
+      Papads: A
+    </span>
+  </motion.h1>
 
-          {/* "Crisp" text without horizontal animation, just a fade-in */}
-          <motion.h1
-            className="product-title text-3xl sm:text-4xl lg:text-5xl font-bold mx-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.5 }}  
-          >
-            <span className="crisp">Crisp</span>
-          </motion.h1>
-
-          {/* "Reminder of Home" text animating from further right */}
-          <motion.h1
-            className="product-title text-3xl sm:text-4xl lg:text-5xl font-bold"
-            initial={{ x: 300, opacity: 0 }} 
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.2, ease: 'easeOut' }} 
-          >
-            <span className="yellow-text"> Reminder of Home</span>
-          </motion.h1>
-        </div>
+  {/* Second part: "Crisp Reminder of Home" */}
+  <motion.h1
+    className="text-3xl sm:text-4xl lg:text-5xl font-bold ml-2"
+    initial={{ x: 300, opacity: 0 }} 
+    animate={{ x: 0, opacity: 1 }}
+    transition={{ duration: 1.2, ease: 'easeOut' }} 
+  >
+    <span style={{ 
+      color: 'black', // Making "Crisp" text black
+      fontFamily: 'Rammetto One', 
+      fontSize: '40px', 
+      fontStyle: 'normal', 
+      fontWeight: '400', 
+      lineHeight: 'normal', 
+      letterSpacing: '7.2px' 
+    }}>
+      Crisp
+    </span>
+    <span style={{ 
+      color: '#FFCB02', 
+      fontFamily: 'Rammetto One', 
+      fontSize: '40px', 
+      fontStyle: 'normal', 
+      fontWeight: '400', 
+      lineHeight: 'normal', 
+      letterSpacing: '7.2px' 
+    }}>
+      {" Reminder of Home"}
+    </span>
+  </motion.h1>
+</div>
 
         {/* Product description text */}
         <p className="product-text mt-4 text-base sm:text-lg md:text-xl lg:text-2xl text-center">

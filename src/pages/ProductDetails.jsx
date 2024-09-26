@@ -24,7 +24,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="px-4 py-4 container bg-yellow-100 min-h-auto max-w-5xl mx-auto mb-10 shadow-lg rounded-lg overflow-hidden">
+    <div className="px-4 py-4 container bg-yellow-100 min-h-auto max-w-5xl mx-auto mb-10 mt-14 shadow-lg rounded-lg overflow-hidden">
       <div className="flex flex-col md:flex-row gap-8 mb-8">
         <img src={product.image} alt={product.name} className="md:w-1/2 h-[400px] object-cover rounded-lg shadow-lg" />
         <div className="flex-grow md:w-[60%] p-4 bg-white rounded-lg shadow-md">

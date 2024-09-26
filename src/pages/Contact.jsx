@@ -7,7 +7,7 @@ import SectionHeader from '../components/SectionHeader';
 
 const Contact = () => {
   return (
-    <section className="bg-gray-100 ">
+    <section className="bg-gray-100  mt-14">
      <SectionHeader  title="CONTACT US" />
     <div className="min-h-screen py-6 px-4 sm:px-6 lg:px-8"> {/* Updated to grey background */}
       <motion.div
@@ -52,7 +52,7 @@ const Contact = () => {
                   className="flex items-center"
                 >
                   <MailIcon className="h-6 w-6 mr-2 text-yellow-600" />
-                  <span className="text-black">gautamlangar2003@gmail.com</span>
+                  <span className="text-black">drashtifoods2024@gmail.com</span>
                 </motion.div>
               </AnimatedComponent>
             </div>

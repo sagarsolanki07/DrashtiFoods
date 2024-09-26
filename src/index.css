@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arial:wght@600&display=swap');
+
+
+
 
 @tailwind base;
 @tailwind components;
@@ -106,4 +110,22 @@ body {
 }
 .inner-shadow {
   box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+.font-arial {
+  font-family: 'Arial', sans-serif;
+  font-weight: 750; /* Extra bold equivalent */
+}
+@keyframes fadeIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease forwards;
 }

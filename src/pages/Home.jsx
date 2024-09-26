@@ -39,11 +39,9 @@ const Home = () => {
 	];
   
 	return (
-		<div className="min-h-screen flex flex-col">
-			<div className="mt-3 mx-3 p-2 bg-white rounded-lg inner-shadow">
-  <Slider />
-</div>
-
+		<div className="min-h-screen flex flex-col mt-6">
+ 				 <Slider />
+			
 
 
 			<ProductDescription />
@@ -73,7 +71,7 @@ const Home = () => {
 			<section className="py-2 bg-gray-100">
 				<Title title="Manufacturing Process" />
 				<div className="container mx-auto text-center px-4 md:px-40">
-					<p className="max-w-auto mx-auto text-black text-[18px] font-extrabold leading-normal tracking-[0.96px]">
+					<p className="max-w-auto mx-auto text-gray-800 text-[18px] font-bold font-poppins leading-normal tracking-[0.96px]">
 						Papad manufacturing begins with mixing wheat flour, spices, salt, and water, followed by dough preparation and
 						feeding it into a papad-making machine. The machine rolls and cuts the dough into thin sheets and shapes them
 						into circular papad. They are then dried in a chamber with controlled air circulation and temperature. Finally,
@@ -84,7 +82,7 @@ const Home = () => {
 			</section>
 
 			<FutureProducts />
-			<section className="py-16 bg-gray-100">
+			<section className="py-8 bg-gray-100">
 				<Title title="Certifications" />
 				<div className="container mx-auto">
 					<div className="flex justify-center space-x-8">
