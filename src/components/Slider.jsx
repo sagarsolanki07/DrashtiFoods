@@ -92,11 +92,11 @@ const Slider = () => {
           />
           <div className="absolute inset-0 flex flex-col justify-center items-center rounded-lg">
             <h2 className="text-black text-center font-poppins text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-extrabold leading-normal tracking-[2px] md:tracking-[3.6px] mb-4 
-              shadow-lg text-shadow-lg transition-transform duration-300 transform hover:scale-105">
+               text-shadow-lg transition-transform duration-300 transform hover:scale-105">
               {slides[currentSlide].title}
             </h2>
             <p className="text-black text-center font-poppins text-[18px] sm:text-[24px] md:text-[30px] font-bold leading-normal tracking-[1.5px] md:tracking-[2.04px] 
-              shadow-lg text-shadow-lg transition-transform duration-300 transform hover:scale-105">
+              text-shadow-lg transition-transform duration-300 transform hover:scale-105">
               {slides[currentSlide].description}
             </p>
           </div>

@@ -24,15 +24,16 @@ const ProductDetails = () => {
   };
 
   return (
+    <div className="min-h-screen  bg-gray-100 flex flex-col mt-6">
     <div className="px-4 py-4 container bg-yellow-100 min-h-auto max-w-5xl mx-auto mb-10 mt-14 shadow-lg rounded-lg overflow-hidden">
       <div className="flex flex-col md:flex-row gap-8 mb-8">
         <img src={product.image} alt={product.name} className="md:w-1/2 h-[400px] object-cover rounded-lg shadow-lg" />
         <div className="flex-grow md:w-[60%] p-4 bg-white rounded-lg shadow-md">
-          <h1 className="text-3xl font-extrabold text-black">{product.name}</h1>
-          <p className="text-base font-bold text-gray-700 leading-relaxed">{product.description}</p>
+          <h1 className="text-3xl font-poppins font-extrabold text-black">{product.name}</h1>
+          <p className="text-base font-semibold font-poppins  text-gray-700 leading-relaxed">{product.description}</p>
         </div>
       </div>
-      <table className="w-full shadow-lg">
+      <table className="w-full shadow-lg font-poppins">
         <thead className="bg-yellow-400 text-black">
           <tr>
             <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider">Package</th>
@@ -65,13 +66,13 @@ const ProductDetails = () => {
           ))}
         </tbody>
       </table>
-      <div className="bg-gray-50 px-6 py-2">
+      <div className="bg-gray-50 px-6 py-2 font-poppins">
         <div className="flex justify-end items-center">
           <span className="text-lg font-semibold text-gray-900 mr-4">Subtotal:</span>
           <span className="text-xl font-bold text-indigo-600">₹ {calculateSubtotal().toFixed(2)}</span>
         </div>
       </div>
-    </div>
+    </div></div>
   );
 };
 

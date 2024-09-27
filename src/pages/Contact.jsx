@@ -4,12 +4,18 @@ import AnimatedComponent from '../components/AnimatedComponent';
 import { Building2Icon, PhoneIcon, MailIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SectionHeader from '../components/SectionHeader';
+import { Helmet } from 'react-helmet';
 
 const Contact = () => {
   return (
-    <section className="bg-gray-100  mt-14">
+    <section className="min-h-screen   bg-gray-100  mt-14">
+      <Helmet>
+  <title>Contact Us - Drashti Foods</title>
+  <meta name="description" content="Get in touch with Drashti Foods for inquiries, feedback, or support. We are here to help!" />
+</Helmet>
+
      <SectionHeader  title="CONTACT US" />
-    <div className="min-h-screen py-6 px-4 sm:px-6 lg:px-8"> {/* Updated to grey background */}
+    <div className="py-6 px-4 sm:px-6 lg:px-8"> {/* Updated to grey background */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -52,7 +58,7 @@ const Contact = () => {
                   className="flex items-center"
                 >
                   <MailIcon className="h-6 w-6 mr-2 text-yellow-600" />
-                  <span className="text-black">drashtifoods2024@gmail.com</span>
+                  <span className="text-black">drashtifoods5818@gmail.com</span>
                 </motion.div>
               </AnimatedComponent>
             </div>

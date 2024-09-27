@@ -83,7 +83,7 @@ const SupplierForm = () => {
                   </div>
                   <div className="flex items-center">
                     <MailIcon className="h-5 w-5 text-yellow-600 mr-1" />
-                    <span className="text-gray-700">gautamlangar2003@gmail.com</span>
+                    <span className="text-gray-700">drashtifoods5818@gmail.com  </span>
                   </div>
                 </div>
               </div>

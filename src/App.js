@@ -1,19 +1,18 @@
-// src/App.js
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from './components/ScrollToTop'; // Import your ScrollToTop component
 import WhatsAppEnquiry from './components/WhatsAppEnquiry';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Product from './pages/Product';
 import ProductDetails from './pages/ProductDetails';
-import DistributorInquiry from './pages/DistributorInquiry'; // New component
-import SupplierForm from './pages/SupplierForm'; // New component
-import ExportInquiry from './pages/ExportInquiry'; // New component
+import DistributorInquiry from './pages/DistributorInquiry';
+import SupplierForm from './pages/SupplierForm';
+import ExportInquiry from './pages/ExportInquiry';
 import ScrollUpButton from './components/ScrollUpButton';
 
 const pageVariants = {
@@ -44,7 +43,6 @@ const AnimatedRoutes = () => {
                 {path === '/distributor-inquiry' && <DistributorInquiry />}
                 {path === '/export-inquiry' && <ExportInquiry />}
                 {path === '/supplier-form' && <SupplierForm />}
-               {/* Add this line */}
               </motion.div>
             }
           />
@@ -65,14 +63,12 @@ function App() {
 
   return (
     <Router>
-      <ScrollToTop />
-    
-      <Header  />
+      <ScrollToTop /> {/* Ensure ScrollToTop is rendered here */}
+      <Header />
       <div className="pt-20">
         <AnimatedRoutes />
       </div>
-      <ScrollUpButton
-      ></ScrollUpButton>
+      <ScrollUpButton />
       <Footer />
     </Router>
   );
