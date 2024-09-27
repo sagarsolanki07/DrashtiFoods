@@ -14,14 +14,16 @@ import { products } from '../data/products'; // Import the products array
 const Home = () => {
 	const firstFourProducts = products.slice(0, 4);
 	return (
-		<div className="min-h-screen flex flex-col mt-6">
+		<div className="min-h-screen flex flex-col mt-12 sm:mt-6 ">
 			<Helmet>
 				<title>Drashti Foods - Home</title>
 				<meta name="description" content="Discover a variety of delicious papads made from high-quality ingredients at Drashti Foods. Explore our products and learn about our manufacturing process." />
 				<meta name="keywords" content="Papad, Drashti Foods, Wheat Papad, Coin Papad, Udad Papad, Rice Papad" />
 			</Helmet>
-			
+			<section className="bg-gray-100">
+
 			<Slider />
+			</section>
 
 			<ProductDescription />
 

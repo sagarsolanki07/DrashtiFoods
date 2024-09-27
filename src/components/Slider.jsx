@@ -4,7 +4,6 @@ import papadBgImage1 from '../assets/images/main.png';
 import papadBgImage2 from '../assets/images/image1.png';
 import papadBgImage3 from '../assets/images/image2.png';
 import papadBgImage4 from '../assets/images/image3.png';
-import frameImage from '../assets/images/Frame1.png'; // Import the mobile image
 
 const slides = [
   {
@@ -36,16 +35,7 @@ const slides = [
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(1);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -74,7 +64,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="relative w-full h-[487px] overflow-x-auto rounded-lg scroll-smooth">
+    <div className="relative w-full max-w-full h-[200px] md:h-[487px] overflow-hidden rounded-lg scroll-smooth bg-gray-200">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentSlide}
@@ -86,7 +76,7 @@ const Slider = () => {
           className="absolute inset-0 flex items-center justify-center"
         >
           <img
-            src={isMobile && currentSlide === 0 ? frameImage : slides[currentSlide].image}
+            src={slides[currentSlide].image}
             alt={slides[currentSlide].title}
             className="w-full h-full object-fill rounded-lg"
           />

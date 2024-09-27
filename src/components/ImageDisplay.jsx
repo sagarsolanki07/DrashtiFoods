@@ -15,9 +15,9 @@ const ImageDisplay = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[487px] overflow-x-hidden ">
+    <div className="relative w-full h-[200px]  md:h-[487px] overflow-x-hidden ">
       <img
-        src={isMobile ? frameImage : papadBgImage1} // Use Frame1.png for mobile, otherwise use papadBgImage1
+        src={ papadBgImage1} // Use Frame1.png for mobile, otherwise use papadBgImage1
         alt="Papad"
         className="w-full h-full object-fill shadow-lg" // Added shadow class
       />

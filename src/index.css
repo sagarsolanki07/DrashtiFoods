@@ -129,3 +129,14 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.2s ease forwards;
 }
+.header {
+  position: fixed; /* Ensure the header is fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50; /* Higher z-index */
+}
+.slider {
+  margin-top: 100px; /* Adjust based on header height */
+  z-index: 40; /* Lower z-index than header */
+}

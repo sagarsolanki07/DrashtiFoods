@@ -5,7 +5,7 @@ const SectionHeader = ({ title }) => {
     <div className="relative">
       <div className="bg-yellow-400 py-4">
         <h2
-          className="text-[#1E1E1E] text-center font-bold tracking-[4.8px] text-5xl md:text-[80px] leading-normal"
+          className="text-[#1E1E1E] text-center font-bold tracking-[4.8px] text-5xl md:text-[80px] leading-normal whitespace-nowrap"
           style={{ fontFamily: 'Poppins, sans-serif' }}
         >
           {title}
