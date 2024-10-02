@@ -69,6 +69,7 @@ function App() {
         <AnimatedRoutes />
       </div>
       <ScrollUpButton />
+      
       <Footer />
     </Router>
   );
